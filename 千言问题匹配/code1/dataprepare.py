@@ -3,7 +3,7 @@ import pandas as pd
 from pandarallel import pandarallel
 from data import RawData
 from paddlenlp import Taskflow
-gc.collect()
+
 pandarallel.initialize(nb_workers = 5)
 LAC_TABLE = {
     'n': '普通名词',
@@ -92,6 +92,6 @@ data = data
 data = convert(data)
 data.to_csv('./data_new/train_eda.csv',index = None)
 
-# test = convert(test)
-# test.to_csv('./data_new/cuted_testB.csv',index=None)
+test = convert(test)
+test.to_csv('./data_new/cuted_testB.csv',index=None)
 

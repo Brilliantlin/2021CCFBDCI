@@ -65,22 +65,3 @@ if __name__ == "__main__":
 
     test_data = rule(test_data)
     test_data['label'].to_csv(args.out_file, header=None, index=None)
-
-
-# numx=0
-# for i in range(len(df_test)):
-#     a = set([x for x in df_test['q1'][i]])
-#     b = set([x for x in df_test['q2'][i]])
-# #     if [x[0] for x in pinyin(df_test['q1'][i])] == [x[0] for x in pinyin(df_test['q2'][i])] :
-# #     if len(a)==len(b) and len(a.intersection(b))== len(a)-1 and len(b.intersection(a))== len(b)-1:
-#     c = list(a.symmetric_difference(b))
-#     if len(a)==len(b) and len(c)== 2:
-#         d = set(pinyin(c[0], heteronym=True)[0]).intersection(set(pinyin(c[1], heteronym=True)[0]))
-#         if  lazy_pinyin(c[0]) == lazy_pinyin(c[1])and df_test['label'][i]!=1:
-#             numx+=1
-#             df_test['label'][i]=1
-#         elif len(d) >0  and df_test['label'][i]!=1:
-#             numx+=1
-#             df_test['label'][i]=1
-#
-# print(numx)

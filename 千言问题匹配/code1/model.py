@@ -356,14 +356,14 @@ class Ernie_cnn(BasicModule):
 
 
 if __name__ == "__main__":
-    from runconfig import model_config
+    # from runconfig import model_config
 
-    pretrained_model = ppnlp.transformers.ErnieGramModel.from_pretrained(
-        'ernie-gram-zh')
-    tokenizer = ppnlp.transformers.ErnieGramTokenizer.from_pretrained(
-        'ernie-gram-zh')
+    # pretrained_model = ppnlp.transformers.ErnieGramModel.from_pretrained(
+        # 'ernie-gram-zh')
+    # tokenizer = ppnlp.transformers.ErnieGramTokenizer.from_pretrained(
+        # 'ernie-gram-zh')
     # model = Ernie_cnn(pretrained_model, model_config)
-    model = QuestionMatching(pretrained_model, model_config)
-    model.save(name='debug.pdparams')
-    prefix = './user_data/models/' + model.config.model_name + '/'  # 模型前缀
-    model.load(prefix + 'debug.pdparams')
+    # model = QuestionMatching(pretrained_model, model_config)
+    # model.save(name='debug.pdparams')
+    # prefix = './user_data/models/' + model.config.model_name + '/'  # 模型前缀
+    # model.load(prefix + 'debug.pdparams')

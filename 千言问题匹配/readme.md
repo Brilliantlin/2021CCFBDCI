@@ -1,4 +1,6 @@
 
+# 赛题简介
+
 
 # 方案简介
 
@@ -17,10 +19,7 @@
 
 ## 模型一 （nezha-large+TTA+阈值搜索+fgm+5折 887）
 
-
 传统的BERT + Linear 分类结构，在bert输入时对数据做对偶，前向时不同数据对做两次model，该模型对对话理解项指标有显著优势
-
-
 
 ## 模型二（ernie-gram-zh 单模  + fgm + 阈值搜索 + TTA 891）：
     
@@ -69,18 +68,18 @@
         |-- run_lin.sh
         |-- run_xia.sh
         |-- .ipynb_checkpoints
-        |-- code1                #模型一和模型三 paddle实现
+        |-- code1                #模型二和模型三 paddle实现
         |   |-- __init__.py 
-        |   |-- config.yaml
+        |   |-- config.yaml         #一些配置文件
         |   |-- config_add_lac.yaml
         |   |-- config_mutitask.yaml
-        |   |-- data.py                  #数据读取 和 数据的转换
+        |   |-- data.py                  #数据读取和数据的转换
         |   |-- dataprepare.py           #数据准备、主要是提取词性和分词
-        |   |-- infer_att_cv.py          #模型一 推理
+        |   |-- infer_att_cv.py          #模型二 推理
         |   |-- infer_att_lac.py 
         |   |-- infer_multitask.py       #模型二推理
         |   |-- model.py                 #模型文件 所有模型都在这
-        |   |-- post2.py                 # 后处理2
+        |   |-- post2.py                 # 后处理代码
         |   |-- rule.py            
         |   |-- run_att.py               #模型一训练
         |   |-- run_att_lac.py   
