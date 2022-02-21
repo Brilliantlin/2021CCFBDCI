@@ -1,0 +1,32 @@
+model_config:
+  model_name: &model_name 'debug'
+  init_ckpt: 'ernie-gram-zh' #macbert-large-chinese ernie-gram-zh
+  init_from_ckpt: ~
+  num_labels: 2
+  rdrop_coef: 0.0
+  dropout: 0.2
+
+data_config:
+  max_seq_length: 68
+  ratio: 70
+
+train_config:
+  attack: 'fgm'
+  train_batch_size: 128
+  eval_batch_size: 256
+  max_steps: -1
+  learning_rate: 2.0e-5
+  weight_decay: 1.0e-3
+  epochs: 5
+  eval_step: 300
+  save_step: 10000
+  warmup_proportion: 0.2
+  init_from_ckpt: ''
+  seed: 2022
+  device: gpu
+  silent: False
+  save_chkpoint: [18300,20700,22500,24000] #需要保存的状态step
+  max_grad_norm: ~
+debug: False
+logger_name: *model_name
+
